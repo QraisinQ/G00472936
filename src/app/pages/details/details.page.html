@@ -5,5 +5,9 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="container"></div>
+  <div class="container">
+    @if (recipe){
+    <app-recipe-full [recipe]="recipe"></app-recipe-full>
+    }
+  </div>
 </ion-content>
