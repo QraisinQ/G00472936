@@ -6,8 +6,8 @@
 
 <ion-content [fullscreen]="true">
   <div class="container">
-    <app-search></app-search>
+    <app-search (recipesEvent)="recieveRecieps($event)"></app-search>
 
-    <app-recipe-list></app-recipe-list>
+    <app-recipe-list [recipeList]="recipes"></app-recipe-list>
   </div>
 </ion-content>

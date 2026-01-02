@@ -7,6 +7,7 @@ import {
 } from '@ionic/angular/standalone';
 import { SearchComponent } from '../../components/search/search.component';
 import { RecipeListComponent } from '../../components/recipe-list/recipe-list.component';
+import { RecipeModel } from 'src/app/models/recipe.model';
 
 @Component({
   selector: 'app-home',
@@ -22,5 +23,12 @@ import { RecipeListComponent } from '../../components/recipe-list/recipe-list.co
   ],
 })
 export class HomePage {
+  recipes: RecipeModel[] = [];
   constructor() {}
+
+  recieveRecieps(recipes: RecipeModel[]) {
+    console.log(recipes);
+
+    this.recipes = recipes;
+  }
 }

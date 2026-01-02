@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IonInput, IonItem, IonButton } from '@ionic/angular/standalone';
+import { RecipeModel } from 'src/app/models/recipe.model';
 import { FetchService } from 'src/app/services/fetch-service';
 
 @Component({
@@ -12,6 +13,9 @@ import { FetchService } from 'src/app/services/fetch-service';
 export class SearchComponent implements OnInit {
   userInput: string = '';
 
+  @Output()
+  recipesEvent = new EventEmitter<RecipeModel[]>();
+
   constructor(private fetchService: FetchService) {}
 
   ngOnInit() {}
@@ -21,7 +25,7 @@ export class SearchComponent implements OnInit {
 
     this.fetchService.fetchRecipes(ingredients).subscribe({
       next: (data) => {
-        console.log(data);
+        this.recipesEvent.emit(data);
       },
       error: (err) => {
         console.error('Error!!!');

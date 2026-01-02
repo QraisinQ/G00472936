@@ -1,5 +1,5 @@
 <h3>Recipes:</h3>
 
-@for (item of ["1", "2", "3"]; track $index) {
-<p>recipe {{ item }}!</p>
+@for (item of recipeList; track $index) {
+<p>recipe {{ item.title }}!</p>
 }
