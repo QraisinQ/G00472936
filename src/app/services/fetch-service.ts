@@ -23,4 +23,10 @@ export class FetchService {
 
     return this.http.get(url);
   }
+
+  fetchFullRecipeById(id: number) {
+    return this.http.get(
+      `${this.url}/recipes/${id}/information?apiKey=${this.k}`
+    );
+  }
 }
