@@ -5,8 +5,8 @@ import {
   IonTitle,
   IonContent,
 } from '@ionic/angular/standalone';
-import { SearchComponent } from '../components/search/search.component';
-import { RecipeListComponent } from '../components/recipe-list/recipe-list.component';
+import { SearchComponent } from '../../components/search/search.component';
+import { RecipeListComponent } from '../../components/recipe-list/recipe-list.component';
 
 @Component({
   selector: 'app-home',
