@@ -1,3 +1,6 @@
-<h3>
-  {{ recipe.title }}
-</h3>
+<div>
+  <h3>Ingredients:</h3>
+  @for (ingredient of recipe.extendedIngredients; track $index) {
+  <app-ingredient [ingredient]="ingredient"></app-ingredient>
+  }
+</div>
