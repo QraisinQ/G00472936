@@ -12,8 +12,8 @@
     <li>{{ item.step }}</li>
     }
   </ol>
-  <ion-button>
+  <ion-button (click)="addToFavorite()">
     <ion-icon slot="start" name="heart"></ion-icon>
-    Add to Favorite
+    {{ isFavorite(recipe.id) ? "Remove from Favorite" : "Add to Favorite" }}
   </ion-button>
 </div>
