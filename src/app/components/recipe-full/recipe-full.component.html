@@ -1,4 +1,7 @@
 <div class="full">
+  <div class="btn-home">
+    <ion-button [routerLink]="`/home`">&lt;-Back</ion-button>
+  </div>
   <h3>Ingredients:</h3>
   @for (ingredient of recipe.extendedIngredients; track $index) {
   <app-ingredient [ingredient]="ingredient"></app-ingredient>
@@ -9,4 +12,8 @@
     <li>{{ item.step }}</li>
     }
   </ol>
+  <ion-button>
+    <ion-icon slot="start" name="heart"></ion-icon>
+    Add to Favorite
+  </ion-button>
 </div>
