@@ -7,6 +7,11 @@ export const routes: Routes = [
       import('./pages/home/home.page').then((m) => m.HomePage),
   },
   {
+    path: 'favorite',
+    loadComponent: () =>
+      import('./pages/favorite/favorite.page').then((m) => m.FavoritePage),
+  },
+  {
     path: 'details/:id',
     loadComponent: () =>
       import('./pages/details/details.page').then((m) => m.DetailsPage),

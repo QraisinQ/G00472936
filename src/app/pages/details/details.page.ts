@@ -11,7 +11,7 @@ import { FetchService } from 'src/app/services/fetch-service';
 import { RecipeFullComponent } from 'src/app/components/recipe-full/recipe-full.component';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-details',
   templateUrl: 'details.page.html',
   styleUrls: ['details.page.scss'],
   imports: [IonHeader, IonToolbar, IonTitle, IonContent, RecipeFullComponent],
