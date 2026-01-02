@@ -11,7 +11,16 @@ export class FetchService {
 
   constructor(private http: HttpClient) {}
 
+  private getRecipesByIngredientUrl(ingredients: string[]) {
+    const ingrParam = `ingredients=${ingredients}`;
+    const keyParam = 'apiKey=' + this.k;
+
+    return `${this.url}/recipes/findByIngredients?${keyParam}&${ingrParam}`;
+  }
+
   fetchRecipes(data: string[]): Observable<any> {
-    return this.http.get(this.url);
+    const url = this.getRecipesByIngredientUrl(data);
+
+    return this.http.get(url);
   }
 }
