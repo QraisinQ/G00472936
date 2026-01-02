@@ -1,6 +1,12 @@
-<div>
+<div class="full">
   <h3>Ingredients:</h3>
   @for (ingredient of recipe.extendedIngredients; track $index) {
   <app-ingredient [ingredient]="ingredient"></app-ingredient>
   }
+  <h3>Instructions:</h3>
+  <ol>
+    @for (item of recipe.analyzedInstructions[0].steps; track $index) {
+    <li>{{ item.step }}</li>
+    }
+  </ol>
 </div>
