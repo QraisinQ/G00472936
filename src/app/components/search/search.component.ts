@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IonInput, IonItem, IonButton } from '@ionic/angular/standalone';
 import { FetchService } from 'src/app/services/fetch-service';
