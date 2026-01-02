@@ -27,8 +27,6 @@ export class HomePage {
   constructor() {}
 
   recieveRecieps(recipes: RecipeModel[]) {
-    console.log(recipes);
-
     this.recipes = recipes;
   }
 }

@@ -1,5 +1,5 @@
 <h3>Recipes:</h3>
 
-@for (item of recipeList; track $index) {
-<p>recipe {{ item.title }}!</p>
+@for (recipe of recipeList; track $index) {
+<app-recipe [recipe]="recipe"></app-recipe>
 }
