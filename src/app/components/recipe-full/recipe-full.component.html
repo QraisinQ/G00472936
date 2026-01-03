@@ -8,7 +8,8 @@
   }
   <h3>Instructions:</h3>
   <ol>
-    @for (item of recipe.analyzedInstructions[0].steps; track $index) {
+    @for (item of (recipe.analyzedInstructions[0] ?
+    recipe.analyzedInstructions[0].steps : []); track $index) {
     <li>{{ item.step }}</li>
     }
   </ol>
