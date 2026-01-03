@@ -1,9 +1,9 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title> G00472936 </ion-title>
-  </ion-toolbar>
-</ion-header>
-
+<app-header></app-header>
 <ion-content [fullscreen]="true">
-  <div class="container">favorite page!</div>
+  <div class="container">
+    <div class="btn-home">
+      <ion-button [routerLink]="`/home`">&lt;-Back</ion-button>
+    </div>
+    <app-recipe-list [recipeList]="favorite"></app-recipe-list>
+  </div>
 </ion-content>

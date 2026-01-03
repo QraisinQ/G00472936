@@ -1,6 +1,10 @@
 <div class="search">
   <ion-item>
-    <ion-input [(ngModel)]="userInput" label="Ingredients: "></ion-input>
+    <ion-input
+      [(ngModel)]="userInput"
+      label="Ingredients: "
+      (keyup.enter)="startSearch()"
+    ></ion-input>
   </ion-item>
   <br />
   <ion-button (click)="startSearch()" expand="block">Search!</ion-button>

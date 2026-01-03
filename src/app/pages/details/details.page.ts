@@ -1,20 +1,16 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {
-  IonHeader,
-  IonToolbar,
-  IonTitle,
-  IonContent,
-} from '@ionic/angular/standalone';
+import { IonContent } from '@ionic/angular/standalone';
 import { RecipeModel } from 'src/app/models/recipe.model';
 import { FetchService } from 'src/app/services/fetch-service';
 import { RecipeFullComponent } from 'src/app/components/recipe-full/recipe-full.component';
+import { AppHeaderComponent } from 'src/app/components/app-header/app-header.component';
 
 @Component({
   selector: 'app-details',
   templateUrl: 'details.page.html',
   styleUrls: ['details.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, RecipeFullComponent],
+  imports: [IonContent, RecipeFullComponent, AppHeaderComponent],
 })
 export class DetailsPage {
   id: string | null = null;
