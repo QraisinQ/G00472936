@@ -1,5 +1,15 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> G00472936 </ion-title>
+    <div class="bar">
+      <ion-title> G00472936 </ion-title>
+      <div class="right">
+        <ion-button [routerLink]="`/favorite`" shape="round">
+          <ion-icon slot="icon-only" name="heart"></ion-icon>
+        </ion-button>
+        <ion-button [routerLink]="`/settings`" shape="round">
+          <ion-icon slot="icon-only" name="construct-outline"></ion-icon>
+        </ion-button>
+      </div>
+    </div>
   </ion-toolbar>
 </ion-header>
