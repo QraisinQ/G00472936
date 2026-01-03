@@ -4,5 +4,12 @@
     <div class="btn-home">
       <ion-button [routerLink]="`/home`">&lt;-Back</ion-button>
     </div>
+    <div class="measure">
+      <h3>Display Recipe Measurements In:</h3>
+      <ion-radio-group [value]="measure" (ionChange)="onChange($event)">
+        <ion-radio value="metric">Metric</ion-radio><br />
+        <ion-radio value="us">US</ion-radio><br />
+      </ion-radio-group>
+    </div>
   </div>
 </ion-content>

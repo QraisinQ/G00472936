@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
-import { IonContent, IonButton } from '@ionic/angular/standalone';
-import { RecipeModel } from 'src/app/models/recipe.model';
+import {
+  IonContent,
+  IonButton,
+  IonRadioGroup,
+  IonRadio,
+} from '@ionic/angular/standalone';
 import { LocalService } from 'src/app/services/local-service';
 import { RouterModule } from '@angular/router';
 import { AppHeaderComponent } from 'src/app/components/app-header/app-header.component';
@@ -9,16 +13,27 @@ import { AppHeaderComponent } from 'src/app/components/app-header/app-header.com
   selector: 'app-settings',
   templateUrl: 'settings.page.html',
   styleUrls: ['settings.page.scss'],
-  imports: [IonContent, IonButton, RouterModule, AppHeaderComponent],
+  imports: [
+    IonContent,
+    IonButton,
+    RouterModule,
+    IonRadioGroup,
+    IonRadio,
+    AppHeaderComponent,
+  ],
 })
 export class SettingsPage {
-  private FAVORITE = 'FAV';
-  favorite: RecipeModel[] = [];
-
+  private MEASURE = 'MEAS';
+  measure: string = 'metric';
   constructor(private localService: LocalService) {}
 
   ionViewWillEnter() {
-    const strData = this.localService.getElement(this.FAVORITE) ?? '[]';
-    this.favorite = JSON.parse(strData);
+    this.measure =
+      this.localService.getElement(this.MEASURE) === 'us' ? 'us' : 'metric';
+  }
+
+  onChange(event: any) {
+    this.measure = event.detail.value;
+    this.localService.setElement(this.MEASURE, this.measure);
   }
 }
